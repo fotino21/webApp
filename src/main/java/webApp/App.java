@@ -23,14 +23,15 @@ public class App
       return "Hello world.";
   }
 
-  public static boolean search(ArrayList<Integer> array, int e) {
+  public static boolean arraySumEquality(ArrayList<Integer> array, int a, int b, int c) {
     System.out.println("inside search");
     if (array == null) return false;
 
-    for (int elt : array) {
-      if (elt == e) return true;
-    }
-    return false;
+    int sum = 0;
+    for (int elt : array) 
+      sum += elt;
+    
+    return sum == a + b + c;
   }
 
   public static void main(String[] args) {
@@ -64,7 +65,13 @@ public class App
         String input2 = req.queryParams("input2").replaceAll("\\s","");
         int input2AsInt = Integer.parseInt(input2);
 
-        boolean result = App.search(inputList, input2AsInt);
+        String input3 = req.queryParams("input3").replaceAll("\\s","");
+        int input3AsInt = Integer.parseInt(input3);
+
+        String input4 = req.queryParams("input4").replaceAll("\\s","");
+        int input4AsInt = Integer.parseInt(input4);
+
+        boolean result = App.arraySumEquality(inputList, input2AsInt, input3AsInt, input4AsInt);
 
         Map<String, Boolean> map = new HashMap<String, Boolean>();
         map.put("result", result);
