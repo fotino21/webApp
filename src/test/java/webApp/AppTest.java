@@ -15,13 +15,13 @@ class AppTest {
     }
 
     @Test
-    public void testFound() {
+    public void testTrue() {
        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
        assertTrue(App.arraySumEquality(array, 2,3,5));
      }
  
      @Test
-     public void testNotFound() {
+     public void testFalse() {
        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
        assertFalse(App.arraySumEquality(array, 3,4,5));
      }
@@ -38,8 +38,8 @@ class AppTest {
      }
 
      @Test
-     public void numberNegative() {
-       assertFalse(App.arraySumEquality(null, 1, -10, 3));
+     public void testNegative() {
+       assertFalse(App.arraySumEquality(new ArrayList<>(Arrays.asList(-1, -2, -3, -4)), -3, -4, -5));
      }
  
 }

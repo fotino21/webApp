@@ -24,8 +24,9 @@ public class App
   }
 
   public static boolean arraySumEquality(ArrayList<Integer> array, int a, int b, int c) {
-    System.out.println("inside search");
-    if (array == null) return false;
+    System.out.println("inside equality");
+
+    if (array == null ) return false;
 
     int sum = 0;
     for (int elt : array) 
